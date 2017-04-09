@@ -16,6 +16,7 @@ services:
 
   owncloud:
     image: owncloud
+    container_name: owncloud-server
     ports:
       - 8081:80
     depends_on:
@@ -25,6 +26,7 @@ services:
 
   mysql:
     image: mariadb
+    container_name: owncloud-mysql
     environment:
       MYSQL_ROOT_PASSWORD: owncloud
     restart_policy:
