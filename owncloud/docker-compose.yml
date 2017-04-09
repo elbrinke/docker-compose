@@ -20,9 +20,13 @@ services:
       - 8081:80
     depends_on:
       - mysql
+    restart_policy:
+    	condition: on-failure
 
   mysql:
     image: mariadb
     environment:
       MYSQL_ROOT_PASSWORD: owncloud
+    restart_policy:
+      condition: on-failure
       
