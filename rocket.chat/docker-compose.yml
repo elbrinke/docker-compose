@@ -23,5 +23,3 @@ services:
     container_name: db
     environment:
       ROOT_URL=http://localhost
-      
-      
