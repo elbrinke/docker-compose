@@ -16,6 +16,8 @@ services:
     image: owncloud
     ports:
       - 8081:80
+    depends_on:
+      - mysql
 
   mysql:
     image: mariadb
