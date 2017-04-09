@@ -21,6 +21,7 @@ services:
       - 8081:80
     depends_on:
       - mysql
+    network_mode: "bridge"
     restart: on-failure
 
   mysql:
@@ -28,5 +29,6 @@ services:
     container_name: owncloud-mysql
     environment:
       MYSQL_ROOT_PASSWORD: owncloud
+    network_mode: "bridge"
     restart: on-failure
       
