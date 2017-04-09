@@ -1,8 +1,10 @@
-# ownCloud with MariaDB/MySQL
+# Creator: Eddy Elbrink
+# Project: Inethi Network
+# Container: ownCloud with MariaDB/MySQL
 #
-# Access via "http://localhost:8080" (or "http://$(docker-machine ip):8080" if using docker-machine)
+# ownCloud URL = "http://localhost:8081"
 #
-# During initial ownCloud setup, select "Storage & database" --> "Configure the database" --> "MySQL/MariaDB"
+# Initial ownCloud setup, select "Storage & database" --> "Configure the database" --> "MySQL/MariaDB"
 # Database user: root
 # Database password: owncloud
 # Database name: owncloud
