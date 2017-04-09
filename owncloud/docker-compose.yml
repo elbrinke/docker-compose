@@ -17,6 +17,10 @@ services:
   owncloud:
     image: owncloud
     container_name: owncloud-server
+    volumes:
+      - /mnt/data/owncloud/apps:/var/www/html/apps
+      - /mnt/data/owncloud/config:/var/www/html/config
+      - /mnt/data/owncloud/data:/var/www/html/data
     ports:
       - 8081:80
     depends_on:
@@ -27,6 +31,8 @@ services:
   mysql:
     image: mariadb
     container_name: owncloud-mysql
+    volumes:
+      - /mnt/data/owncloud/mysql:/var/lib/mysql
     environment:
       MYSQL_ROOT_PASSWORD: owncloud
     network_mode: "bridge"
