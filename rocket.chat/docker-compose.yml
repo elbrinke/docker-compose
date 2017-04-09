@@ -1,0 +1,27 @@
+# Creator: Eddy Elbrink
+# Project: Inethi Network
+# Service: Rocket.Chat
+# Requirements: Rocket.Chat with MongoDB
+#
+# Access via "http://localhost:8082" (or "http://$(docker-machine ip):8082" if using docker-machine)
+#
+
+version: '3'
+
+services:
+
+  rocketchat:
+    image: rocket.chat		
+    container_name: rocketchat
+    ports:
+      - 8082:80
+    depends_on:
+      - db
+    	
+  db:
+    image: mongo
+    container_name: db
+    environment:
+      ROOT_URL=http://localhost
+      
+      
