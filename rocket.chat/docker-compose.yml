@@ -23,6 +23,7 @@ services:
       ROOT_URL: http://localhost
       MONGO_URL: mongodb://rocketchat-mongo:27017/meteor
     network_mode: "bridge"
+    restart: on-failure
 
   mongo:
     image: mongo
@@ -31,3 +32,4 @@ services:
       - /mnt/data/rocketchat/mongo/data:/data/db
     command: --smallfiles
     network_mode: "bridge"
+    restart: on-failure
