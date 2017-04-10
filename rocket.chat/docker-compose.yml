@@ -3,7 +3,7 @@
 # Service: Rocket.Chat
 # Requirements: Rocket.Chat with MongoDB
 #
-# Access via "http://localhost:8082" (or "http://$(docker-machine ip):8082" if using docker-machine)
+# Rocket.Chat URL = "http://localhost:8082"
 #
 
 version: '3'
