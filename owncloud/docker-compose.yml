@@ -10,13 +10,15 @@
 # Database name: owncloud
 # Database host: replace "localhost" with "mysql"
 
-version: '3'
+version: '2'
 
 services:
 
   owncloud:
     image: owncloud
     container_name: owncloud-server
+    domainname: owncloud.inethi.net
+    hostname: owncloud
     volumes:
       - /mnt/data/owncloud/apps:/var/www/html/apps
       - /mnt/data/owncloud/config:/var/www/html/config
@@ -25,16 +27,20 @@ services:
       - 8081:80
     depends_on:
       - mysql
-    network_mode: "bridge"
+    links:
+      - mysql
     restart: on-failure
+    network_mode: "bridge"
 
   mysql:
     image: mariadb
     container_name: owncloud-mysql
+    domainname: mysql.inethi.net
+    hostname: mysql
     volumes:
       - /mnt/data/owncloud/mysql:/var/lib/mysql
     environment:
       MYSQL_ROOT_PASSWORD: owncloud
-    network_mode: "bridge"
     restart: on-failure
-      
+    network_mode: "bridge"
+    
