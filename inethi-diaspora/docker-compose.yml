@@ -1,17 +1,20 @@
+# Diaspora [Production]
 # Diaspora main directory is mounted for the host (see volume)
 
 version: '3'
 
 services:
 
-  owncloud:
-    image: inethi/diaspora:1.0
-    container_name: diaspora-server
-    domainname: diaspora.inethi.net
-    hostname: diaspora
+  diaspora:
+    image: diaspora.inethi.net
     volumes:
-      - /mnt/data/diaspora:/home/diaspora/diaspora
+      - /mnt/data/diaspora/nginx:/etc/nginx
+      - /mnt/data/diaspora/diaspora:/home/diaspora/diaspora
     ports:
-      - 8083:3000
+      - 443:443
     restart: on-failure
     network_mode: "bridge"
+    container_name: diaspora.inethi.net
+    hostname: diaspora.inethi.net
+    domainname: diaspora.inethi.net
+    privileged: true

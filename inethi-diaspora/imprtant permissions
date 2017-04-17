@@ -1,0 +1,26 @@
+# To get Diaspora to RUN, make sure these services are running
+
+start REDIS-SERVER
+start APACHE2
+start MYSQL
+start DBUS
+start apparmor
+
+# To allow NGINX to access socket
+sudo chmod -R 775 /home/diaspora/diaspora/
+sudo usermod -a -G www-data diaspora
+
+# From EXAMPLE
+
+#Change the directory owner and group:
+sudo chown www-data:www-data /var/www/[new directory]
+
+#Allow the group to write to the directory with appropriate permissions:
+sudo chmod -R 775 /var/www
+
+#Add myself to the www-data group:
+sudo usermod -a -G www-data [my username]
+
+# mount volumes
+/mnt/data/diaspora/nginx:/etc/nginx/
+/mnt/data/diaspora/diaspora:/home/diaspora/diaspora/
