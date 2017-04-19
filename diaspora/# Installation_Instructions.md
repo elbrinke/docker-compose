@@ -1,19 +1,19 @@
 # Installation Instructions:
 
-# Install Dependencies: 
+## Install Dependencies: 
 sudo apt-get install build-essential git curl imagemagick libmagickwand-dev nodejs redis-server libcurl4-openssl-dev libxml2-dev libxslt-dev libgmp-dev libmysqlclient-dev
 
-#MYSQL Packages
+## MYSQL Packages 
 apt-get install nano vim mysql-client libmysqlclient-dev mysql-server
 
-# RVM Packages
+## RVM Packages
 apt-get install gawk libssl-dev libyaml-dev libsqlite3-dev sqlite3 autoconf libgdbm-dev libncurses5-dev automake bison libffi-dev libreadline6-dev
 
-# MYSQL Setup:
-# user: root
-# password: root
+### MYSQL Setup:
+user: root
+password: root
 
-# Creating a user for DB
+## Creating a user for DB
 mysql -u root -p
 
 ## MYSQL Commands:
