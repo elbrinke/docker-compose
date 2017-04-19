@@ -20,8 +20,8 @@ mysql -u root -p
 
 ### MYSQL Commands:
 
-CREATE USER 'diaspora'@'localhost' IDENTIFIED BY 'diaspora'; 
-GRANT ALL PRIVILEGES ON `diaspora_%`.* TO 'diaspora'@'localhost';
+ - CREATE USER 'diaspora'@'localhost' IDENTIFIED BY 'diaspora'; 
+ - GRANT ALL PRIVILEGES ON `diaspora_%`.* TO 'diaspora'@'localhost';
 
 ### Testing new MYSQL User
 mysql -u diaspora -p
