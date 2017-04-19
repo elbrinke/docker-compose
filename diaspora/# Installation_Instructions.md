@@ -9,22 +9,24 @@ apt-get install nano vim mysql-client libmysqlclient-dev mysql-server
 ## RVM Packages
 apt-get install gawk libssl-dev libyaml-dev libsqlite3-dev sqlite3 autoconf libgdbm-dev libncurses5-dev automake bison libffi-dev libreadline6-dev
 
-### MYSQL Setup:
+## MYSQL Setup:
+
+### Setting MYSQL Root Password
 user: root
 password: root
 
-## Creating a user for DB
+### Creating a user for DB
 mysql -u root -p
 
-## MYSQL Commands:
+### MYSQL Commands:
 
 CREATE USER 'diaspora'@'localhost' IDENTIFIED BY 'diaspora';
 GRANT ALL PRIVILEGES ON `diaspora_%`.* TO 'diaspora'@'localhost';
 
-# Testing new MYSQL User
+### Testing new MYSQL User
 mysql -u diaspora -p
 
-# Create System User
+# Create Diaspora User
 adduser --disabled-login diaspora
 su diaspora
 cd ~ 
